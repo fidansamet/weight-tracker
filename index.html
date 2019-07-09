@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<title>Weight Tracker</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="/images/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/stylesheet/util.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheet/main.css">
+<!--===============================================================================================-->
+</head>
+
+<body>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55" id="signreg">
+				<div class="forms container-fullwidth">
+					<ul class="nav-links new-session-tabs nav-tabs nav nav-item	" role="tablist">
+						<li class="nav-item" role="presentation"><a  id="signinTab" class="nav-link qa-sign-in-tab active" data-toggle="tab" role="tab" aria-selected="true" href="#">Sign In</a></li>
+						<li class="nav-item" role="presentation"><a id="registerTab" class="nav-link qa-register-tab" data-toggle="tab" data-track-event="click_button" data-track-label="sign_in_register"
+																	data-track-property="sign_in" data-track-value="register" role="tab" aria-selected="false" href="#">Register</a></li>
+					</ul>
+					<br>
+					<form class="login100-form validate-form flex-sb flex-w" id="signinForm" action="#">
+
+						<span class="txt1 p-b-11">
+							Username
+						</span>
+						<div class="wrap-input100 validate-input m-b-36" data-validate = "Username is required">
+							<input class="input100" type="text" name="username" id="username1" >
+							<span class="focus-input100"></span>
+						</div>
+
+						<span class="txt1 p-b-11">
+							Password
+						</span>
+						<div class="wrap-input100 validate-input m-b-12" data-validate = "Password is required">
+							<span class="btn-show-pass" id="showPass1">
+								<i class="fa fa-eye"></i>
+							</span>
+							<input class="input100" type="password" name="pass" id="pass1">
+							<span class="focus-input100"></span>
+						</div>
+
+						<div class="flex-sb-m w-full p-b-48">
+							<div class="contact100-form-checkbox">
+								<input class="input-checkbox100" id="ckb11" type="checkbox" name="remember-me">
+								<label class="label-checkbox100" for="ckb11">
+									Remember me
+								</label>
+							</div>
+						</div>
+
+						<div class="container-login100-form-btn">
+							<button class="login100-form-btn" id="signin">
+								Sign In
+							</button>
+						</div>
+					</form>
+
+					<form class="login100-form validate-form flex-sb flex-w" id="registerForm" action="#">
+
+						<span class="txt1 p-b-11">
+							Username
+						</span>
+						<div class="wrap-input100 validate-input m-b-36" data-validate = "Username is required">
+							<input class="input100" type="text" name="username" id="username2" >
+							<span class="focus-input100"></span>
+						</div>
+
+						<span class="txt1 p-b-11">
+							Email Address
+						</span>
+						<div class="wrap-input100 validate-input m-b-36" data-validate = "Email Address is required">
+							<input class="input100" type="text" name="email" id="email2">
+							<span class="focus-input100"></span>
+						</div>
+
+						<span class="txt1 p-b-11">
+							Password
+						</span>
+						<div class="wrap-input100 validate-input m-b-12" data-validate = "Password is required">
+							<span class="btn-show-pass" id="showPass2">
+								<i class="fa fa-eye"></i>
+							</span>
+							<input class="input100" type="password" name="pass" id="pass2" >
+							<span class="focus-input100"></span>
+						</div>
+
+						<div class="flex-sb-m w-full p-b-48">
+							<div class="contact100-form-checkbox">
+								<input class="input-checkbox100" id="ckb12" type="checkbox" name="remember-me">
+								<label class="label-checkbox100" for="ckb12">
+									Remember me
+								</label>
+							</div>
+
+							<div>
+								<a href="#" class="txt3">
+									Forgot password?
+								</a>
+							</div>
+						</div>
+
+						<div class="container-login100-form-btn">
+							<button class="login100-form-btn" id="register">
+								Register
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55" id="profile">
+				<div class="container emp-profile">
+					<form method="post">
+						<div class="row">
+							<div class="col-md-6">
+								<h4 id="setUsername">
+									username
+								</h4>
+								<input type="text" id="setUsernameIn" placeholder="enter new username" style="display: inline-block">
+								<button id="changeUsername" style="display: inline-block">
+									change username
+								</button>
+								<h4 id="setEmail" style="display: inline-block">
+									email
+								</h4>
+								<input type="text" id="setEmailIn" placeholder="enter new email" style="display: inline-block">
+								<button id="changeEmail" style="display: inline-block">
+									change email
+								</button>
+								<h4 id="setPassword" style="display: inline-block">
+									password
+								</h4>
+								<input type="text" id="setPassIn" placeholder="enter new password" style="display: inline-block">
+								<button id="changePass" style="display: inline-block">
+									change password
+								</button>
+								<br>
+								<button id="logout" style="display: inline-block;" class="fa" >&#xf08b;</button>
+								<h6 style="display: none">
+									Enter new weight info:
+								</h6>
+								<br>
+								<input type="date" id="date" name="trip-start" min="1960-01-01" max="2019-12-31" style="display: inline-block">
+								<br>
+								<div class="wrap-input100 validate-input" data-validate = "Username is required" style="display: inline-block">
+									<input class="input100" type="text" name="username" id="curWeight" >
+									<span class="focus-input100"></span>
+								</div>
+								<br>
+								<button class="login100-form-btn" id="addWeight" style="display: inline-block">
+									Add weight info
+								</button>
+								<br>
+								<br>
+							</div>
+							<div class="col-md-6">
+								<ul class="list-group" id="allUsers">
+								</ul>
+							</div>
+							<div id="weightPlot" style="width:600px;height:250px;">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/vendor/bootstrap/js/popper.js"></script>
+	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/vendor/daterangepicker/moment.min.js"></script>
+	<script src="/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="/js/main.js"></script>
+	<script src="/js/auth.js"></script>
+
+</body>
+</html>
